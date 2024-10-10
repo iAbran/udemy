@@ -1,3 +1,5 @@
+package udemy;
+
 import java.util.Scanner;
 
 public class Service {

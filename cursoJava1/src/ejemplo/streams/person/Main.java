@@ -1,4 +1,4 @@
-package ejemplo.streams;
+package ejemplo.streams.person;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -13,45 +13,45 @@ public class Main {
         List<Person> females = people.stream()
                 .filter(p -> p.getGender().equals(Gender.FEMALE))
                 .filter(p -> p.getName().startsWith("E"))
-                .collect(Collectors.toList());
+                .toList();
 
-        //females.forEach(System.out::println);
+        females.forEach(System.out::println);
 
         //Sort
         List<Person> sort = people.stream()
                 .sorted(Comparator.comparing(Person::getAge).reversed())
-                .collect(Collectors.toList());
+                .toList();
 
-        //sort.forEach(System.out::println);
+        sort.forEach(System.out::println);
 
         //All Match
         Boolean m = people.stream()
                 .allMatch(p -> p.getAge() > 8);
 
-        //System.out.println(m);
+        System.out.println(m);
 
         //Any Match
         Boolean any = people.stream()
                 .anyMatch(p -> p.getName().equalsIgnoreCase("motete"));
 
-        //System.out.println(any);
+        System.out.println(any);
 
         Boolean none = people.stream()
                 .noneMatch(p -> p.getName().equals("Pipigey"));
 
-        //System.out.println(none);
+        System.out.println(none);
 
         //Max
         Optional<Person> op1 = people.stream()
                 .max(Comparator.comparing(Person::getAge));
 
-        //System.out.println(op1);
+        System.out.println(op1);
 
         //Min
         Optional<Person> op2 = people.stream()
                 .min(Comparator.comparing(Person::getAge));
 
-        //System.out.println(op2);
+        System.out.println(op2);
 
         //Group
         Map<Gender , List<Person>> groupByGender = people.stream()

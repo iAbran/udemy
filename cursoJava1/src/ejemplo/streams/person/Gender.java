@@ -1,4 +1,4 @@
-package ejemplo.streams;
+package ejemplo.streams.person;
 
 public enum Gender {
 
